@@ -20,6 +20,7 @@ def generate_content(prompt: str) -> str:
     model = ChatGroq(
         model=os.getenv("GROQ_MODEL", DEFAULT_MODEL),
         temperature=0.7,
+        timeout=60,
         max_retries=2,
     )
     response = model.invoke(prompt)

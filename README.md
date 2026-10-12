@@ -41,8 +41,12 @@ sin mezclar sus responsabilidades.
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
+├── docs/
+│   └── articulo-medium.md
 └── tests/
-    └── test_prompt_builder.py
+    ├── test_prompt_builder.py
+    ├── test_app.py
+    └── check_live_generation.py
 ```
 
 ## Requisitos
@@ -98,7 +102,8 @@ caracteres. De este modo no se utiliza un prompt genérico para todos los casos.
 
 ## Pruebas
 
-Las pruebas no llaman al LLM ni consumen cuota:
+Las pruebas verifican los prompts y el flujo del formulario con respuestas
+simuladas. No llaman al LLM ni consumen cuota:
 
 ```powershell
 python -m unittest discover -s tests -v
@@ -106,6 +111,19 @@ python -m unittest discover -s tests -v
 
 Para una prueba manual, utiliza el mismo tema con las cuatro plataformas y comprueba
 que cambian la longitud, la estructura y los elementos propios de cada red.
+El resultado se conserva durante la sesión y la interfaz avisa si una respuesta para
+Twitter/X supera los 280 caracteres. Estos tests no verifican la calidad de las
+respuestas reales: esa comprobación necesita una clave de Groq y conexión a Internet.
+
+Para repetir la comprobación del formulario con respuestas reales de las cuatro
+plataformas (consume cuota de Groq):
+
+```powershell
+.\.venv\Scripts\python.exe tests/check_live_generation.py
+```
+
+Puedes probar solo una plataforma con `--platforms LinkedIn`. Esta comprobación
+muestra el texto y su longitud, y verifica que se visualiza y permanece en la sesión.
 
 ## Limitaciones de la POC
 
@@ -115,6 +133,9 @@ que cambian la longitud, la estructura y los elementos propios de cada red.
 - La salida de un LLM puede contener errores y debe revisarse antes de publicarse.
 
 ## Tecnologías
+
+El artículo que explica el desarrollo está preparado en
+[docs/articulo-medium.md](docs/articulo-medium.md) para su publicación en Medium.
 
 - Python
 - Streamlit

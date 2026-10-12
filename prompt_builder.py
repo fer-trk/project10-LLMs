@@ -39,6 +39,7 @@ Instrucciones específicas de formato:
 {platform_instruction}
 
 Reglas generales:
+- Redacta el contenido en castellano.
 - Adapta el vocabulario y el nivel de detalle a la audiencia indicada.
 - Mantén de forma consistente el tono solicitado.
 - No inventes estadísticas, estudios, citas ni datos concretos.

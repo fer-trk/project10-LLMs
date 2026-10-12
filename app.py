@@ -59,14 +59,27 @@ if submitted:
                 "la clave de Groq y vuelve a intentarlo."
             )
         else:
-            st.subheader("Contenido generado")
-            st.markdown(generated_content)
-            st.download_button(
-                "Descargar como texto",
-                data=generated_content,
-                file_name="contenido_generado.txt",
-                mime="text/plain",
-            )
+            # Conserva el resultado cuando Streamlit vuelve a ejecutar la interfaz.
+            st.session_state["result"] = {
+                "content": generated_content,
+                "prompt": prompt,
+                "platform": platform,
+            }
 
-            with st.expander("Ver el prompt utilizado"):
-                st.code(prompt, language="text")
+if "result" in st.session_state:
+    result = st.session_state["result"]
+    st.subheader(f"Contenido generado para {result['platform']}")
+    st.markdown(result["content"])
+    if result["platform"] == "Twitter/X" and len(result["content"]) > 280:
+        st.warning(
+            f"El texto tiene {len(result['content'])} caracteres y supera el límite "
+            "de 280. Acórtalo antes de publicar o vuelve a generar."
+        )
+    st.download_button(
+        "Descargar como texto",
+        data=result["content"],
+        file_name="contenido_generado.txt",
+        mime="text/plain",
+    )
+    with st.expander("Ver el prompt utilizado"):
+        st.code(result["prompt"], language="text")
