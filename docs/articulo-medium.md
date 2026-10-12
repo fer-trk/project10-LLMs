@@ -1,5 +1,7 @@
 # De un formulario a un texto publicable: una POC de generación de contenido con Python y un LLM
 
+Publicado en [Medium](https://medium.com/@fernandatorokpolito/de-un-formulario-a-un-texto-publicable-una-poc-de-generaci%C3%B3n-de-contenido-con-python-y-un-llm-bfc714f81044).
+
 ## Cómo construimos una aplicación educativa con Streamlit, LangChain y Groq
 
 Un mismo tema puede convertirse en un artículo de blog, una publicación de LinkedIn,

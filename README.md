@@ -132,10 +132,14 @@ muestra el texto y su longitud, y verifica que se visualiza y permanece en la se
 - No incluye imágenes, RAG, agentes, autenticación ni base de datos.
 - La salida de un LLM puede contener errores y debe revisarse antes de publicarse.
 
-## Tecnologías
+## Artículo publicado en Medium
 
-El artículo que explica el desarrollo está preparado en
-[docs/articulo-medium.md](docs/articulo-medium.md) para su publicación en Medium.
+Puedes leer cómo se desarrolló el proyecto en
+[De un formulario a un texto publicable: una POC de generación de contenido con Python y un LLM](https://medium.com/@fernandatorokpolito/de-un-formulario-a-un-texto-publicable-una-poc-de-generaci%C3%B3n-de-contenido-con-python-y-un-llm-bfc714f81044).
+
+La copia del artículo se conserva en [docs/articulo-medium.md](docs/articulo-medium.md).
+
+## Tecnologías
 
 - Python
 - Streamlit
