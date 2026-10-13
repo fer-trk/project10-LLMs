@@ -9,6 +9,9 @@ un único modelo de lenguaje.
 Medio, Avanzado y Experto se explican más abajo como una hoja de ruta: todavía no están
 implementados. Esta guía describe tanto la aplicación actual como los pasos para ampliarla.
 
+Para una guía de construcción con código completo, glosario y catálogo de prompts,
+consulta el [manual completo del proyecto](docs/manual-del-proyecto.md).
+
 El proyecto responde al briefing educativo de una empresa ficticia, Digital Content,
 que solicita una prueba de concepto de generación automática de contenido. Se prioriza
 una solución pequeña que se pueda ejecutar, comprender y explicar durante una demo.
